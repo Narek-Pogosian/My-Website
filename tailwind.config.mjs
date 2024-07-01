@@ -13,7 +13,7 @@ export default {
       center: true,
       padding: "1rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1340px",
       },
     },
     extend: {
@@ -22,11 +22,33 @@ export default {
         foreground: "hsl(var(--foreground))",
         element: "hsl(var(--element))",
         hover: "hsla(var(--hover))",
-        "muted-foreground": "hsl(var(--muted-foreground))",
+        muted: {
+          foreground: "hsl(var(--muted-foreground))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+      },
+      boxShadow: {
+        primaryBtnShadow:
+          "inset 0 2px 0 0 hsla(0,0%,100%,.2),inset 0 -1px 0 0 rgba(0,0,0,.25), 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);",
+        "primaryBtnShadow-dark":
+          "inset 0 2px 0 0 hsla(0,0%,100%,.8),inset 0 -1px 0 0 rgba(0,0,0,.8), 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        fadeOut: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 300ms ease-out",
+        fadeOut: "fadeOut 300ms ease-out",
       },
     },
   },

@@ -1,11 +1,12 @@
 ---
 import ThemeIcon from "../icons/ThemeIcon.astro";
+import Button from "./ui/Button.astro";
 ---
 
-<button id="theme-toggle" transition:persist>
+<Button size="icon" variant="ghost" id="theme-toggle" transition:persist>
   <span class="sr-only">Toggle theme</span>
   <ThemeIcon />
-</button>
+</Button>
 
 <script is:inline>
   function setThemeMode() {

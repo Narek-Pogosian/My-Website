@@ -4,9 +4,12 @@ import Config from "@/config/config.json";
 import Button from "@/components/ui/Button.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Home">
   <section class="hero">
-    <div class="container grid lg:grid-cols-2" aria-labelledby="hero-title">
+    <div
+      class="container grid lg:grid-cols-2 gap-8"
+      aria-labelledby="hero-title"
+    >
       <div>
         <h1
           id="hero-title"
@@ -14,26 +17,16 @@ import Button from "@/components/ui/Button.astro";
         >
           {Config.hero.title}
         </h1>
-        <p class="text-lg mb-10">
+        <p class="text-lg mb-10 text-pretty">
           {Config.hero.description}
         </p>
         <Button
           size="lg"
-          className="shadow-lg shadow-hover dark:shadow-black/20"
+          className="shadow-primaryBtnShadow dark:shadow-primaryBtnShadow-dark"
           >{Config.hero.button.label}</Button
         >
       </div>
       <div class="flex justify-center items-center">Image</div>
     </div>
-  </section>
-  <section class="grid grid-cols-4 gap-6 container">
-    <div class="aspect-square bg-element p-2 rounded shadow-md">
-      <button class="px-3 py-1.5 rounded hover:bg-hover">Button</button>
-    </div>
-    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
-    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
-    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
-    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
-    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
   </section>
 </Layout>

@@ -1,15 +1,17 @@
 ---
 import ThemeToggle from "@/components/ThemeToggle.astro";
 import Navigation from "@/config/navigation.json";
+import Button from "./ui/Button.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <header
-  class="sticky top-0 shadow-md shadow-hover dark:shadow-black/60 left-0 py-4 bg-background"
+  class="sticky top-0 shadow-md shadow-hover dark:shadow-black/60 left-0 h-14 flex items-center bg-background"
 >
   <div class="container flex justify-between">
     <div class="flex gap-14 items-center">
       <a href="/" class="font-extrabold text-lg font-serif">Logo</a>
-      <nav role="navigation">
+      <nav role="navigation" class="max-sm:hidden">
         <ul role="list" class="flex gap-8">
           {
             Navigation.main.map((item) => (
@@ -26,6 +28,61 @@ import Navigation from "@/config/navigation.json";
         </ul>
       </nav>
     </div>
-    <ThemeToggle />
+
+    <div class="flex gap-1" transition:persist>
+      <ThemeToggle />
+      <div class="sm:hidden">
+        <Button
+          size="icon"
+          variant="ghost"
+          id="menu-btn"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle menu</span>
+          <Icon name="menu" size={30} />
+        </Button>
+        <nav
+          id="primary-navigation"
+          data-state="closed"
+          class="absolute top-[100%] h-[calc(100vh-56px)] data data-[state=closed]:hidden data-[state=closed]:animate-fadeOut data-[state=open]:animate-fadeIn left-0 bg-background w-full"
+        >
+          <ul role="list" class="flex flex-col pt-20 items-center gap-12">
+            {
+              Navigation.main.map((item) => (
+                <li>
+                  <a href={item.url} class="text-lg font-medium relative">
+                    {item.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  const btn = document.querySelector("#menu-btn");
+  const nav = document.querySelector("#primary-navigation");
+
+  btn?.addEventListener("click", () => {
+    if (btn.ariaExpanded === "false") {
+      btn.ariaExpanded = "true";
+      nav.dataset.state = "open";
+      document.body.style.overflowY = "hidden";
+    } else {
+      btn.ariaExpanded = "false";
+      nav.dataset.state = "closed";
+      document.body.style.overflowY = "scroll";
+    }
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    btn.ariaExpanded = "false";
+    nav.dataset.state = "closed";
+    document.body.style.overflowY = "scroll";
+  });
+</script>
