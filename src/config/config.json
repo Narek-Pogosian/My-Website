@@ -1,0 +1,28 @@
+{
+  "site": {
+    "title": "Pinwheel Astro",
+    "base_url": "https://pinwheel-astro.vercel.app",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "147",
+    "logo_height": "31",
+    "logo_text": "Pinwheel"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100,
+    "blog_folder": "blog"
+  },
+
+  "hero": {
+    "title": "Let's make your product a success.",
+    "description": "Crator is your partner in digital innovation. We fuse strategic thinking with standout design and development to deliver uniquely tailored solutions.",
+    "button": {
+      "label": "Get Access Now",
+      "link": "/"
+    }
+  }
+}

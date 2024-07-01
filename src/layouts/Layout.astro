@@ -1,0 +1,39 @@
+---
+import "@/styles.css";
+import "@fontsource/merriweather/latin-400.css";
+import "@fontsource/merriweather/latin-700.css";
+import "@fontsource/merriweather/latin-900.css";
+import "@fontsource/roboto/latin-400.css";
+import "@fontsource/roboto/latin-500.css";
+import "@fontsource/roboto/latin-700.css";
+
+import { ViewTransitions } from "astro:transitions";
+import Header from "@/components/Header.astro";
+import SkipToMain from "@/components/SkipToMain.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body>
+    <SkipToMain />
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+  </body>
+</html>

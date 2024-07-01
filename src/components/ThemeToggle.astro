@@ -1,0 +1,40 @@
+---
+import ThemeIcon from "../icons/ThemeIcon.astro";
+---
+
+<button id="theme-toggle" transition:persist>
+  <span class="sr-only">Toggle theme</span>
+  <ThemeIcon />
+</button>
+
+<script is:inline>
+  function setThemeMode() {
+    const storageTheme = localStorage.getItem("theme");
+
+    if (storageTheme !== "light") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
+
+  function toggleMode() {
+    const storageTheme = localStorage.getItem("theme");
+    document.documentElement.classList.toggle("dark");
+
+    if (storageTheme === "dark") {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+  }
+
+  setThemeMode();
+
+  //  Only needed if using ViewTransition
+  document.addEventListener("astro:after-swap", () => {
+    setThemeMode();
+  });
+
+  document.querySelector("#theme-toggle").addEventListener("click", toggleMode);
+</script>

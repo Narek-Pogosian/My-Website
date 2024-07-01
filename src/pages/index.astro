@@ -1,0 +1,37 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Config from "@/config/config.json";
+---
+
+<Layout title="Welcome to Astro.">
+  <section class="hero">
+    <div class="container grid lg:grid-cols-2" aria-labelledby="hero-title">
+      <div>
+        <h1
+          id="hero-title"
+          class="mb-8 font-semibold text-balance text-3xl md:text-5xl leading-tight"
+        >
+          {Config.hero.title}
+        </h1>
+        <p class="text-lg mb-10">
+          {Config.hero.description}
+        </p>
+        <button
+          class="px-8 py-1.5 rounded bg-black text-white dark:bg-white dark:text-black font-semibold text-lg"
+          >{Config.hero.button.label}</button
+        >
+      </div>
+      <div class="flex justify-center items-center">Image</div>
+    </div>
+  </section>
+  <section class="grid grid-cols-4 gap-6 container">
+    <div class="aspect-square bg-element p-2 rounded shadow-md">
+      <button class="px-3 py-1.5 rounded hover:bg-hover">Button</button>
+    </div>
+    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
+    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
+    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
+    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
+    <div class="aspect-square bg-element p-2 rounded shadow-md"></div>
+  </section>
+</Layout>

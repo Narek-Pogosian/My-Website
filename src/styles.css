@@ -1,0 +1,65 @@
+/* CUSTOM PROPERTIES */
+:root {
+  --background: 290 40% 97%;
+  --foreground: 0 0% 10%;
+  --muted-foreground: 0 0% 40%;
+  --element: 290 40% 99%;
+  --hover: 290 40%, 60%, 0.1;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: 240 7% 9%;
+  --foreground: 240 7% 100%;
+  --muted-foreground: 240 7% 60%;
+  --element: 240 7% 12%;
+  --hover: 0, 0%, 80%, 0.1;
+}
+
+/* DEFAULT STYLING */
+body {
+  @apply bg-background text-foreground overflow-y-scroll;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-serif;
+}
+
+section {
+  @apply py-14 lg:py-24;
+}
+
+/* CUSTOM STYLING */
+.hero {
+  background-color: rgba(193, 154, 199, 0.152);
+  background-image: linear-gradient(
+      54deg,
+      rgba(255, 131, 122, 0.2),
+      rgba(255, 131, 122, 0) 34%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(239, 152, 207, 0.4),
+      rgba(239, 152, 207, 0) 40%
+    );
+}
+
+.dark .hero {
+  background-color: #1c1c21b4;
+  background-image: linear-gradient(
+      54deg,
+      rgba(255, 131, 122, 0.2),
+      rgba(255, 131, 122, 0) 54%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(168, 152, 239, 0.2),
+      rgba(239, 152, 207, 0) 57%
+    );
+}
