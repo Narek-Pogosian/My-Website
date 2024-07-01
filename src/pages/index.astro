@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Config from "@/config/config.json";
+import Button from "@/components/ui/Button.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,9 +17,10 @@ import Config from "@/config/config.json";
         <p class="text-lg mb-10">
           {Config.hero.description}
         </p>
-        <button
-          class="px-8 py-1.5 rounded bg-black text-white dark:bg-white dark:text-black font-semibold text-lg"
-          >{Config.hero.button.label}</button
+        <Button
+          size="lg"
+          className="shadow-lg shadow-hover dark:shadow-black/20"
+          >{Config.hero.button.label}</Button
         >
       </div>
       <div class="flex justify-center items-center">Image</div>

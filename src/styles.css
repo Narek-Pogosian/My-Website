@@ -2,8 +2,13 @@
 :root {
   --background: 290 40% 97%;
   --foreground: 0 0% 10%;
-  --muted-foreground: 0 0% 40%;
+
+  --primary: 290 10% 15%;
+  --primary-foreground: 0 0% 98%;
+
   --element: 290 40% 99%;
+  --muted-foreground: 0 0% 40%;
+
   --hover: 290 40%, 60%, 0.1;
 }
 
@@ -12,8 +17,13 @@
 
   --background: 240 7% 9%;
   --foreground: 240 7% 100%;
-  --muted-foreground: 240 7% 60%;
+
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 8%;
+
   --element: 240 7% 12%;
+  --muted-foreground: 240 7% 60%;
+
   --hover: 0, 0%, 80%, 0.1;
 }
 
