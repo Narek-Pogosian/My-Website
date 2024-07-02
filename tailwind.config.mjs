@@ -1,4 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+import { transform } from "typescript";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -38,12 +39,8 @@ export default {
       },
       keyframes: {
         fadeIn: {
-          from: { opacity: 0 },
-          to: { opacity: 1 },
-        },
-        fadeOut: {
-          from: { opacity: 1 },
-          to: { opacity: 0 },
+          from: { opacity: 0, top: "70%" },
+          to: { opacity: 1, top: "100%" },
         },
       },
       animation: {

@@ -73,3 +73,16 @@ section {
       rgba(239, 152, 207, 0) 57%
     );
 }
+
+.not-found {
+  background-image: radial-gradient(
+      circle farthest-corner at 100% 100%,
+      rgba(122, 167, 255, 0.32),
+      transparent 44%
+    ),
+    radial-gradient(
+      circle farthest-corner at 0% 100%,
+      rgba(255, 1, 1, 0.15),
+      transparent 32%
+    );
+}

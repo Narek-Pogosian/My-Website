@@ -1,1 +1,14 @@
-<a href="#main-content" class="sr-only"> Skip to main content </a>
+---
+import { cn } from "@/lib/utils";
+import { button } from "./ui/Button.astro";
+---
+
+<a
+  href="#main-content"
+  class={cn(
+    button({ variant: "default", size: "sm" }),
+    "opacity-0 absolute top-3 left-2 transition-opacity duration-200 focus:opacity-100 z-50"
+  )}
+>
+  Skip to main content
+</a>

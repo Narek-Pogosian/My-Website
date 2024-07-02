@@ -1,0 +1,36 @@
+---
+import Header from "@/components/Header.astro";
+import { button } from "@/components/ui/Button.astro";
+import { cn } from "@/lib/utils";
+import "@/styles.css";
+import "@fontsource/merriweather/latin-400.css";
+import "@fontsource/merriweather/latin-700.css";
+import "@fontsource/merriweather/latin-900.css";
+import "@fontsource/roboto/latin-400.css";
+import "@fontsource/roboto/latin-500.css";
+import "@fontsource/roboto/latin-700.css";
+
+import { ViewTransitions } from "astro:transitions";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>404</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <div class="not-found grow flex flex-col justify-center items-center">
+      <h1 class="font-bold text-7xl sm:text-9xl mb-16">404</h1>
+      <a href="/" class={cn(button({ variant: "default", size: "lg" }))}
+        >Back to home</a
+      >
+    </div>
+  </body>
+</html>
