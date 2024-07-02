@@ -27,6 +27,11 @@
 
   "socials": [
     {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "/"
+    },
+    {
       "name": "Linkedin",
       "icon": "linkedin",
       "url": "/"

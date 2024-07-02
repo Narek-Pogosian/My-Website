@@ -1,5 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
-import { transform } from "typescript";
+import colors from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -19,6 +19,7 @@ export default {
     },
     extend: {
       colors: {
+        accent: colors.pink,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         element: "hsl(var(--element))",

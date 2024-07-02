@@ -1,12 +1,6 @@
 ---
 import "@/styles.css";
-import "@fontsource/merriweather/latin-400.css";
-import "@fontsource/merriweather/latin-700.css";
-import "@fontsource/merriweather/latin-900.css";
-import "@fontsource/roboto/latin-400.css";
-import "@fontsource/roboto/latin-500.css";
-import "@fontsource/roboto/latin-700.css";
-
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import { ViewTransitions } from "astro:transitions";
 import SkipToMain from "@/components/SkipToMain.astro";
 import Header from "@/components/Header.astro";
@@ -27,6 +21,9 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap"
+    />
     <ViewTransitions />
     <title>{title}</title>
   </head>

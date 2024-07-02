@@ -1,7 +1,7 @@
 ---
 import type { MarkdownHeading } from "astro";
 import Layout from "./Layout.astro";
-import TableOfContent from "@/components/TableOfContent.astro";
+import { cn } from "@/lib/utils";
 
 interface Props {
   title: string;
@@ -13,11 +13,36 @@ const { headings, title } = Astro.props;
 
 <Layout title={title}>
   <div class="container relative flex gap-10 py-10">
-    <div class="w-72 h-fit hidden lg:block">
-      <TableOfContent headings={headings} />
+    <div class="w-72 font-serif sticky top-24 left-0 h-fit hidden lg:block">
+      <nav
+        aria-label="Table of content"
+        class="border-l-4 pl-4 border-accent-500/50"
+      >
+        <p class="font-extrabold" aria-hidden="true">On this page</p>
+        <ul>
+          {
+            headings.map((heading) => (
+              <li>
+                <a
+                  href={`#${heading.slug}`}
+                  class={cn(
+                    "text-sm leading-5 mt-4 text-pretty block hover:underline",
+                    {
+                      "ml-3 mt-2": heading.depth === 3,
+                      "ml-6 mt-2": heading.depth === 4,
+                    }
+                  )}
+                >
+                  {heading.text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
     </div>
     <div
-      class="prose prose-pre:max-w-[90vw] dark:prose-invert max-lg:mx-auto max-w-2xl"
+      class="prose prose-pre:max-w-[92vw] dark:prose-invert max-lg:mx-auto max-w-2xl"
     >
       <h1>{title}</h1>
 
