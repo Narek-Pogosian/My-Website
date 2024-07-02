@@ -2,7 +2,8 @@ import { defineCollection, z } from "astro:content";
 import tags from "@/config/tags.json";
 
 const blogCollection = defineCollection({
-  schema: {
+  type: "content",
+  schema: z.object({
     isDraft: z.boolean(),
     title: z.string(),
     sortOrder: z.number(),
@@ -10,7 +11,7 @@ const blogCollection = defineCollection({
       .array(z.string())
       .refine((arr) => arr.every((entry) => tags.includes(entry))),
     publishDate: z.date(),
-  },
+  }),
 });
 
 const portfolioCollection = defineCollection({});

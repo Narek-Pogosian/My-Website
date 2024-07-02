@@ -28,6 +28,11 @@
 }
 
 /* DEFAULT STYLING */
+
+html {
+  @apply scroll-pt-20;
+}
+
 body {
   @apply bg-background text-foreground overflow-y-scroll;
 }
@@ -42,7 +47,13 @@ h6 {
 }
 
 section {
-  @apply py-14 lg:py-24;
+  @apply py-10 lg:py-20;
+}
+
+.prose img,
+.prose pre,
+.prose code {
+  @apply rounded;
 }
 
 /* CUSTOM STYLING */

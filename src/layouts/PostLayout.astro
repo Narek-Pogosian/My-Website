@@ -1,0 +1,28 @@
+---
+import type { MarkdownHeading } from "astro";
+import Layout from "./Layout.astro";
+import TableOfContent from "@/components/TableOfContent.astro";
+
+interface Props {
+  title: string;
+  headings: MarkdownHeading[];
+}
+
+const { headings, title } = Astro.props;
+---
+
+<Layout title={title}>
+  <div class="container relative flex gap-10 py-10">
+    <div class="w-72 h-fit hidden lg:block">
+      <TableOfContent headings={headings} />
+    </div>
+    <div
+      class="prose prose-pre:max-w-[90vw] dark:prose-invert max-lg:mx-auto max-w-2xl"
+    >
+      <h1>{title}</h1>
+
+      <!-- Render the <Content /> comp as child -->
+      <slot />
+    </div>
+  </div>
+</Layout>

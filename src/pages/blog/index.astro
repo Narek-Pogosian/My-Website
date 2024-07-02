@@ -3,11 +3,23 @@ import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const blogEntries = await getCollection("blog");
-console.log(blogEntries);
 ---
 
 <Layout title="Blog">
-  <section class="container">
-    <h1>Blog</h1>
+  <section class="hero">
+    <div class="container">
+      <h1 class="font-bold text-xl">Blog</h1>
+    </div>
+  </section>
+  <section class="container py-8">
+    <ul class="flex gap-8">
+      {
+        blogEntries.map(({ data, slug }) => (
+          <li>
+            <a href={`/blog/${slug}`}>{data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 </Layout>
