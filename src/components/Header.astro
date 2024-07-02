@@ -11,14 +11,18 @@ import { Icon } from "astro-icon/components";
   <div class="container flex justify-between">
     <div class="flex gap-14 items-center">
       <a href="/" class="font-extrabold text-lg font-serif">Logo</a>
-      <nav role="navigation" class="max-sm:hidden">
+      <nav
+        role="navigation"
+        class="max-sm:hidden"
+        aria-label="primary navigation"
+      >
         <ul role="list" class="flex gap-8">
           {
             Navigation.main.map((item) => (
               <li>
                 <a
                   href={item.url}
-                  class="text-sm font-medium relative after:absolute after:h-0.5 after:w-[120%] after:top-[105%] after:bg-foreground after:-left-[10%] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  class="text-sm font-medium px-1 py-0.5 relative after:absolute after:h-0.5 after:w-[110%] after:scale-y-100 after:-bottom-1 after:bg-foreground after:-left-[5%] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {item.name}
                 </a>
@@ -40,9 +44,11 @@ import { Icon } from "astro-icon/components";
           aria-expanded="false"
         >
           <span class="sr-only">Toggle menu</span>
-          <Icon name="menu" size={30} />
+          <Icon name="menu" size={30} aria-hidden />
+          <Icon name="close" size={30} aria-hidden />
         </Button>
         <nav
+          aria-label="primary navigation"
           id="primary-navigation"
           data-state="closed"
           class="absolute top-[100%] h-[calc(100vh-56px)] data data-[state=closed]:hidden data-[state=closed]:animate-fadeOut data-[state=open]:animate-fadeIn left-0 bg-background w-full"
@@ -86,3 +92,13 @@ import { Icon } from "astro-icon/components";
     document.body.style.overflowY = "scroll";
   });
 </script>
+
+<style>
+  #menu-btn[aria-expanded="true"] svg:first-of-type {
+    display: none;
+  }
+
+  #menu-btn[aria-expanded="false"] svg:last-of-type {
+    display: none;
+  }
+</style>

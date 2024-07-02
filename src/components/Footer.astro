@@ -1,0 +1,48 @@
+---
+import Navigation from "@/config/navigation.json";
+import Config from "@/config/config.json";
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="py-8 md:py-12 border-t font-serif dark:border-white/10">
+  <div class="container grid gap-8 md:grid-cols-2">
+    <div>
+      <a href="/" class="text-lg font-bold mb-2 block">Logo</a>
+      <p class="font-medium text-sm">&copy; 2024. All rights reserved.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <nav aria-labelledby="footer-navigation">
+        <h3 id="footer-navigation" class="font-bold mb-2">Website</h3>
+        <ul class="flex gap-2 flex-wrap">
+          {
+            Navigation.footer.map((link) => (
+              <li>
+                <a
+                  href={link.url}
+                  class="text-muted-foreground text-sm font-medium hover:text-foreground"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <nav aria-labelledby="social-link">
+        <h3 id="social-link" class="font-bold mb-2">Socials</h3>
+        <ul class="flex gap-2">
+          {
+            Config.socials.map((link) => (
+              <li>
+                <a href={link.url}>
+                  <span class="sr-only">{link.name}</span>
+                  <Icon name={link.icon} size={25} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+</footer>

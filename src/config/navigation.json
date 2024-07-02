@@ -1,6 +1,24 @@
 {
   "main": [
     {
+      "name": "About",
+      "url": "/about"
+    },
+    {
+      "name": "Portfolio",
+      "url": "/portfolio"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    }
+  ],
+  "footer": [
+    {
       "name": "Home",
       "url": "/"
     },
@@ -9,9 +27,16 @@
       "url": "/about"
     },
     {
+      "name": "Portfolio",
+      "url": "/portfolio"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
       "name": "Blog",
       "url": "/blog"
     }
-  ],
-  "footer": []
+  ]
 }

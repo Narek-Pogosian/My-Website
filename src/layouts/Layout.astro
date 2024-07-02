@@ -8,8 +8,9 @@ import "@fontsource/roboto/latin-500.css";
 import "@fontsource/roboto/latin-700.css";
 
 import { ViewTransitions } from "astro:transitions";
-import Header from "@/components/Header.astro";
 import SkipToMain from "@/components/SkipToMain.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   title: string;
@@ -29,11 +30,12 @@ const { title } = Astro.props;
     <ViewTransitions />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <SkipToMain />
     <Header />
-    <main id="main-content">
+    <main id="main-content" class="grow">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
