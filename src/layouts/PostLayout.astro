@@ -1,6 +1,6 @@
 ---
 import type { MarkdownHeading } from "astro";
-import Layout from "./Layout.astro";
+import RootLayout from "./RootLayout.astro";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 const { headings, title } = Astro.props;
 ---
 
-<Layout title={title}>
+<RootLayout title={title}>
   <div class="container relative flex gap-10 py-10">
     <div class="w-72 font-serif sticky top-24 left-0 h-fit hidden lg:block">
       <nav
@@ -45,9 +45,8 @@ const { headings, title } = Astro.props;
       class="prose prose-pre:max-w-[92vw] dark:prose-invert max-lg:mx-auto max-w-2xl"
     >
       <h1>{title}</h1>
-
       <!-- Render the <Content /> comp as child -->
       <slot />
     </div>
   </div>
-</Layout>
+</RootLayout>

@@ -1,14 +1,9 @@
 ---
+import "@/styles.css";
 import Header from "@/components/Header.astro";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import { button } from "@/components/ui/Button.astro";
 import { cn } from "@/lib/utils";
-import "@/styles.css";
-import "@fontsource/merriweather/latin-400.css";
-import "@fontsource/merriweather/latin-700.css";
-import "@fontsource/merriweather/latin-900.css";
-import "@fontsource/roboto/latin-400.css";
-import "@fontsource/roboto/latin-500.css";
-import "@fontsource/roboto/latin-700.css";
 
 import { ViewTransitions } from "astro:transitions";
 ---
@@ -21,6 +16,9 @@ import { ViewTransitions } from "astro:transitions";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+    />
     <ViewTransitions />
     <title>404</title>
   </head>

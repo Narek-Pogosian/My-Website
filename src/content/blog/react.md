@@ -1,8 +1,9 @@
 ---
 isDraft: false
 title: "React"
+description: "Some shit about react"
 sortOrder: 1
-tags: ["React", "LeetCode"]
+tags: ["react", "leetcode"]
 publishDate: 2024-07-02
 ---
 

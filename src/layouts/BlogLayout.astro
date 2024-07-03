@@ -1,0 +1,51 @@
+---
+import Layout from "@/layouts/RootLayout.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  title?: string;
+  blogPosts: CollectionEntry<"blog">[];
+}
+
+const { title = "Blog", blogPosts } = Astro.props;
+---
+
+<Layout title={title}>
+  <section class="hero">
+    <div class="container">
+      <h1 class="font-bold text-xl">Blog</h1>
+    </div>
+  </section>
+  <section class="container py-8">
+    <ul class="grid lg:grid-cols-3 sm:grid-cols-2 gap-8">
+      {
+        blogPosts.map(({ data, slug }) => (
+          <li class="relative bg-element py-4 px-6 rounded shadow-md shadow:hover dark:shadow-black/40">
+            <article>
+              <a
+                href={`/blog/${slug}`}
+                class="text-lg font-semibold mb-4 block font-serif after:absolute after:inset-0"
+              >
+                <h3>{data.title}</h3>
+              </a>
+              <p class="text-xs font-medium mb-1 text-muted-foreground">
+                {data.publishDate.toLocaleDateString()}
+              </p>
+              <p class="mb-4 text-sm">{data.description}</p>
+              <ul class="flex flex-wrap gap-2">
+                {data.tags.map((tag) => (
+                  <a
+                    href={`/blog/tag/${tag}`}
+                    class="text-xs capitalize font-medium px-2 py-0.5 bg-accent-400/10 text-accent-800 dark:text-accent-200 border-accent-300/20 rounded border relative"
+                  >
+                    {tag}
+                  </a>
+                ))}
+              </ul>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

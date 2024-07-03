@@ -28,7 +28,6 @@
 }
 
 /* DEFAULT STYLING */
-
 html {
   @apply scroll-pt-20;
 }

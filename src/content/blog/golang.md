@@ -1,10 +1,10 @@
 ---
 isDraft: false
-title: "Leet"
-description: "Solution to a LeetCode problem"
+title: "Go"
+description: "Some random go code"
 sortOrder: 1
-tags: ["leetcode"]
-publishDate: 2024-07-02
+tags: ["go"]
+publishDate: 2024-07-03
 ---
 
 ## Overview

@@ -22,9 +22,14 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <GoogleFontsOptimizer
-      url="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap"
+      url="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
     />
     <ViewTransitions />
+    <!-- <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style> -->
     <title>{title}</title>
   </head>
   <body class="min-h-screen flex flex-col">
