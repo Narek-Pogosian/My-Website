@@ -10,6 +10,7 @@
   --muted-foreground: 0 0% 44%;
 
   --hover: 290 40%, 60%, 0.1;
+  --scrollbar: 290 6% 80%;
 }
 
 .dark {
@@ -25,11 +26,12 @@
   --muted-foreground: 240 7% 57%;
 
   --hover: 0, 0%, 80%, 0.1;
+  --scrollbar: 240 8% 25%;
 }
 
 /* DEFAULT STYLING */
 html {
-  @apply scroll-pt-20;
+  @apply scroll-pt-20 scrollbar scrollbar-track-transparent scrollbar-thumb-scrollbar;
 }
 
 body {

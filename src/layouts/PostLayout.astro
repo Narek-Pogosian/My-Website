@@ -13,7 +13,9 @@ const { headings, title } = Astro.props;
 
 <RootLayout title={title}>
   <div class="container relative flex gap-10 py-10">
-    <div class="w-72 font-serif sticky top-24 left-0 h-fit hidden lg:block">
+    <div
+      class="w-72 font-serif sticky top-24 left-0 h-fit max-h-[82vh] scrollbar-thin overflow-y-auto hidden lg:block"
+    >
       <nav
         aria-label="Table of content"
         class="border-l-4 pl-4 border-accent-500/50"

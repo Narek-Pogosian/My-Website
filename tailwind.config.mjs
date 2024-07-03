@@ -24,6 +24,7 @@ export default {
         foreground: "hsl(var(--foreground))",
         element: "hsl(var(--element))",
         hover: "hsla(var(--hover))",
+        scrollbar: "hsla(var(--scrollbar))",
         muted: {
           foreground: "hsl(var(--muted-foreground))",
         },
@@ -50,5 +51,5 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tailwind-scrollbar")],
 };
