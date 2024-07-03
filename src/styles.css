@@ -7,7 +7,7 @@
   --primary-foreground: 0 0% 98%;
 
   --element: 290 40% 99%;
-  --muted-foreground: 0 0% 40%;
+  --muted-foreground: 0 0% 44%;
 
   --hover: 290 40%, 60%, 0.1;
 }
@@ -22,7 +22,7 @@
   --primary-foreground: 0 0% 8%;
 
   --element: 240 7% 12%;
-  --muted-foreground: 240 7% 60%;
+  --muted-foreground: 240 7% 57%;
 
   --hover: 0, 0%, 80%, 0.1;
 }
@@ -46,7 +46,7 @@ h6 {
 }
 
 section {
-  @apply py-10 lg:py-20;
+  @apply py-10 lg:py-16;
 }
 
 .prose img,

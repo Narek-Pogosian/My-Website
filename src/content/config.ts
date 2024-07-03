@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import tags from "@/config/tags.json";
 
-const blogCollection = defineCollection({
+const collection = defineCollection({
   type: "content",
   schema: z.object({
     isDraft: z.boolean(),
@@ -18,6 +18,6 @@ const blogCollection = defineCollection({
 const portfolioCollection = defineCollection({});
 
 export const collections = {
-  blog: blogCollection,
+  collection,
   portfolio: portfolioCollection,
 };

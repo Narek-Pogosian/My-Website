@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { capitalize } from "@/lib/utils";
-import BlogLayout from "@/layouts/BlogLayout.astro";
+import CollectionLayout from "@/layouts/CollectionLayout.astro";
 import tags from "@/config/tags.json";
 
 export async function getStaticPaths() {
@@ -13,9 +13,9 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const blogEntries = await getCollection("blog", ({ data }) => {
+const entries = await getCollection("collection", ({ data }) => {
   return data.tags.includes(tag);
 });
 ---
 
-<BlogLayout blogPosts={blogEntries} title={capitalize(tag)} />
+<CollectionLayout posts={entries} title={capitalize(tag)} />

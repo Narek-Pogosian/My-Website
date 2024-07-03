@@ -6,23 +6,27 @@ import { capitalize, cn } from "@/lib/utils";
 
 interface Props {
   title?: string;
-  blogPosts: CollectionEntry<"blog">[];
+  posts: CollectionEntry<"collection">[];
 }
 
-const { title = "Blog", blogPosts } = Astro.props;
+const { title = "Collection", posts } = Astro.props;
 const { tag } = Astro.params;
 ---
 
 <Layout title={title}>
-  <section class="hero">
+  <div class="hero py-10">
     <div class="container">
-      <h1 class="font-bold text-xl">Blog</h1>
+      <h1 class="font-bold mb-2 text-2xl">Collection</h1>
+      <p class="text-sm italic font-serif">
+        Here, you will find a collection of posts I've written about things I'm
+        learning about.
+      </p>
     </div>
-  </section>
-  <section class="container py-12">
-    <nav aria-label="Tags" class="flex flex-wrap gap-4 mb-12">
+  </div>
+  <div class="container py-8">
+    <nav aria-label="Tags" class="flex flex-wrap gap-2 mb-8">
       <a
-        href="/blog"
+        href="/collection"
         class={cn(
           "text-sm font-medium border px-4 py-1 rounded-full bg-element text-neutral-800 dark:text-neutral-200 border-slate-200 dark:border-white/5",
           {
@@ -32,9 +36,9 @@ const { tag } = Astro.params;
         )}>All</a
       >
       {
-        tags.map((t) => (
+        tags.sort().map((t) => (
           <a
-            href={`/blog/tag/${t}`}
+            href={`/collection/tag/${t}`}
             class={cn(
               "text-sm font-medium border px-4 py-1 rounded-full bg-element text-neutral-800 dark:text-neutral-200 border-slate-200 dark:border-white/5",
               {
@@ -49,28 +53,28 @@ const { tag } = Astro.params;
       }
     </nav>
     {
-      blogPosts.length === 0 ? (
+      posts.length === 0 ? (
         <p class="text-lg font-semibold text-center">Nothing here</p>
       ) : (
         <ul class="grid lg:grid-cols-3 sm:grid-cols-2 gap-8">
-          {blogPosts.map(({ data, slug }) => (
+          {posts.map(({ data, slug }) => (
             <li class="relative bg-element py-4 px-6 rounded shadow-md shadow-hover dark:shadow-black/40">
               <article>
                 <a
-                  href={`/blog/${slug}`}
-                  class="text-lg font-semibold mb-4 block font-serif after:absolute after:inset-0"
+                  href={`/collection/${slug}`}
+                  class="text-lg font-semibold block font-serif after:absolute after:inset-0"
                 >
                   <h3>{data.title}</h3>
                 </a>
-                <p class="text-xs font-medium mb-1 text-muted-foreground">
+                <p class="text-xs font-medium mb-4 text-muted-foreground">
                   {data.publishDate.toLocaleDateString()}
                 </p>
                 <p class="mb-4 text-sm">{data.description}</p>
-                <ul class="flex flex-wrap gap-2">
-                  {data.tags.map((tag) => (
+                <ul class="flex flex-wrap gap-4">
+                  {data.tags.sort().map((tag) => (
                     <a
-                      href={`/blog/tag/${tag}`}
-                      class="text-xs capitalize font-medium px-2 py-0.5 bg-accent-400/10 text-accent-800 dark:text-accent-200 border-accent-300/20 rounded border relative"
+                      href={`/collection/tag/${tag}`}
+                      class="text-xs capitalize font-medium px-3 py-1 bg-accent-400/10 hover:bg-accent-400/20 transition-colors text-accent-800 dark:text-accent-200 border-accent-300/20 rounded border relative"
                     >
                       {tag}
                     </a>
@@ -82,5 +86,5 @@ const { tag } = Astro.params;
         </ul>
       )
     }
-  </section>
+  </div>
 </Layout>

@@ -13,8 +13,8 @@
       "url": "/contact"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
+      "name": "Collection",
+      "url": "/collection"
     }
   ],
   "footer": [
@@ -35,8 +35,8 @@
       "url": "/contact"
     },
     {
-      "name": "Blog",
-      "url": "/blog"
+      "name": "Collection",
+      "url": "/collection"
     }
   ]
 }

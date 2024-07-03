@@ -1,0 +1,8 @@
+---
+import CollectionLayout from "@/layouts/CollectionLayout.astro";
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("collection");
+---
+
+<CollectionLayout posts={entries} />
