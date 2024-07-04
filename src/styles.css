@@ -57,8 +57,14 @@ section {
   @apply rounded;
 }
 
-/* CUSTOM STYLING */
-.hero {
+/* CUSTOM COMPONENTS */
+
+.banner {
+  @apply py-8 md:py-12;
+}
+
+/* GRADIENTS */
+.hero-gradient {
   background-color: #c19ac727;
   background-image: linear-gradient(
       54deg,
@@ -67,12 +73,12 @@ section {
     ),
     linear-gradient(
       241deg,
-      rgba(239, 152, 207, 0.4),
+      rgba(130, 116, 209, 0.4),
       rgba(239, 152, 207, 0) 40%
     );
 }
 
-.dark .hero {
+.dark .hero-gradient {
   background-color: #1c1c21b4;
   background-image: linear-gradient(
       54deg,
@@ -86,7 +92,27 @@ section {
     );
 }
 
-.not-found {
+.collection-gradient {
+  background-color: #c19ac727;
+  background-image: linear-gradient(
+      44deg,
+      rgba(239, 108, 189, 0.2),
+      rgba(255, 131, 122, 0) 54%
+    ),
+    linear-gradient(241deg, rgba(151, 95, 201, 0.2), rgba(239, 152, 207, 0) 48%);
+}
+
+.portfolio-gradient {
+  background-color: #dfad8b2a;
+  background-image: linear-gradient(
+      44deg,
+      rgba(230, 176, 117, 0.189),
+      rgba(255, 131, 122, 0) 44%
+    ),
+    linear-gradient(241deg, rgba(226, 96, 85, 0.32), rgba(239, 152, 207, 0) 68%);
+}
+
+.not-found-gradient {
   background-image: radial-gradient(
       circle farthest-corner at 100% 100%,
       rgba(122, 167, 255, 0.32),

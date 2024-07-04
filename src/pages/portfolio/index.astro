@@ -1,9 +1,30 @@
 ---
 import RootLayout from "@/layouts/RootLayout.astro";
+import Config from "@/config/config.json";
+import { getCollection } from "astro:content";
+import { sortByPriority } from "@/lib/utils";
+
+const entries = await getCollection("portfolio");
 ---
 
 <RootLayout title="Portfolio">
-  <section class="container">
-    <h1>Portfolio</h1>
-  </section>
+  <div class="portfolio-gradient banner">
+    <div class="container">
+      <h1 class="font-bold mb-2 text-2xl">{Config.portfolio.title}</h1>
+      <p class="text-sm italic font-serif">
+        {Config.portfolio.description}
+      </p>
+    </div>
+  </div>
+  <div class="container py-10">
+    <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        sortByPriority(entries).map((entry) => (
+          <li class="p-6 bg-element rounded shadow">
+            <a href={`/portfolio/${entry.slug}`}>{entry.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </RootLayout>

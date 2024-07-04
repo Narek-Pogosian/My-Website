@@ -25,6 +25,16 @@
     }
   },
 
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Here is a curated collection of projects I've created and related experiences."
+  },
+
+  "collection": {
+    "title": "Collection",
+    "description": "Here, you will find a collection of posts I've written about things I'm learning about."
+  },
+
   "socials": [
     {
       "name": "GitHub",

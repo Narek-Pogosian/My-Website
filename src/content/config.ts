@@ -7,17 +7,32 @@ const collection = defineCollection({
     isDraft: z.boolean(),
     title: z.string().max(50),
     description: z.string().max(200),
-    sortOrder: z.number(),
+    priority: z.number().min(0).max(10),
     tags: z
       .array(z.string())
       .refine((arr) => arr.every((entry) => tags.includes(entry))),
     publishDate: z.date(),
+    updatedData: z.date().optional(),
   }),
 });
 
-const portfolioCollection = defineCollection({});
+const portfolio = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string().max(50),
+    description: z.string().max(200),
+    priority: z.number().min(0).max(10),
+    projectSettings: z
+      .object({
+        github: z.string(),
+        website: z.string().optional(),
+        techStack: z.array(z.string()),
+      })
+      .optional(),
+  }),
+});
 
 export const collections = {
   collection,
-  portfolio: portfolioCollection,
+  portfolio,
 };

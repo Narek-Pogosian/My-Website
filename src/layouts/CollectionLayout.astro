@@ -1,8 +1,9 @@
 ---
 import Layout from "@/layouts/RootLayout.astro";
+import Config from "@/config/config.json";
 import tags from "@/config/tags.json";
 import type { CollectionEntry } from "astro:content";
-import { capitalize, cn } from "@/lib/utils";
+import { capitalize, cn, sortByPriority } from "@/lib/utils";
 
 interface Props {
   title?: string;
@@ -14,17 +15,16 @@ const { tag } = Astro.params;
 ---
 
 <Layout title={title}>
-  <div class="hero py-12">
+  <div class="collection-gradient banner">
     <div class="container">
-      <h1 class="font-bold mb-2 text-2xl">Collection</h1>
+      <h1 class="font-bold mb-2 text-2xl">{Config.collection.title}</h1>
       <p class="text-sm italic font-serif">
-        Here, you will find a collection of posts I've written about things I'm
-        learning about.
+        {Config.collection.description}
       </p>
     </div>
   </div>
-  <div class="container py-8">
-    <nav aria-label="Tags" class="flex flex-wrap gap-2 mb-8">
+  <div class="container py-10">
+    <nav aria-label="Tags" class="flex flex-wrap gap-2 mb-10">
       <a
         href="/collection"
         class={cn(
@@ -57,9 +57,9 @@ const { tag } = Astro.params;
         <p class="text-lg font-semibold text-center">Nothing here</p>
       ) : (
         <ul class="grid lg:grid-cols-3 sm:grid-cols-2 gap-8">
-          {posts.map(({ data, slug }) => (
+          {sortByPriority(posts).map(({ data, slug }) => (
             <li class="relative bg-element py-4 px-6 rounded shadow-md shadow-hover dark:shadow-black/40">
-              <article>
+              <article class="flex flex-col">
                 <a
                   href={`/collection/${slug}`}
                   class="text-lg font-semibold block font-serif after:absolute after:inset-0"
@@ -69,8 +69,8 @@ const { tag } = Astro.params;
                 <p class="text-xs font-medium mb-4 text-muted-foreground">
                   {data.publishDate.toLocaleDateString()}
                 </p>
-                <p class="mb-4 text-sm">{data.description}</p>
-                <ul class="flex flex-wrap gap-4">
+                <p class="mb-6 text-sm font-medium">{data.description}</p>
+                <ul class="flex flex-wrap gap-4 mt-auto">
                   {data.tags.sort().map((tag) => (
                     <a
                       href={`/collection/tag/${tag}`}

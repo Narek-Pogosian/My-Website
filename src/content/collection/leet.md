@@ -2,7 +2,7 @@
 isDraft: false
 title: "Leet"
 description: "Solution to a LeetCode problem"
-sortOrder: 1
+priority: 10
 tags: ["leetcode"]
 publishDate: 2024-07-02
 ---
