@@ -4,7 +4,7 @@ description: "My thesis project where I researched about accessibility and built
 priority: 8
 projectSettings:
   {
-    techStack: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind CSS"],
+    techStack: ["Next.js", "TypeScript", "Drizzle ORM", "Tailwind CSS"],
     github: "https://github.com/Narek-Pogosian/Accessible-Shop",
   }
 ---

@@ -7,7 +7,7 @@
   --primary-foreground: 0 0% 98%;
 
   --element: 290 40% 99%;
-  --muted-foreground: 0 0% 44%;
+  --muted-foreground: 0 0% 38%;
 
   --hover: 290 40%, 60%, 0.1;
   --scrollbar: 290 6% 80%;
@@ -23,7 +23,7 @@
   --primary-foreground: 0 0% 8%;
 
   --element: 240 7% 12%;
-  --muted-foreground: 240 7% 57%;
+  --muted-foreground: 240 7% 72%;
 
   --hover: 0, 0%, 80%, 0.1;
   --scrollbar: 240 8% 25%;

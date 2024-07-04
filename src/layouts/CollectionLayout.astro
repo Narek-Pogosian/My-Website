@@ -69,12 +69,14 @@ const { tag } = Astro.params;
                 <p class="text-xs font-medium mb-4 text-muted-foreground">
                   {data.publishDate.toLocaleDateString()}
                 </p>
-                <p class="mb-6 text-sm font-medium">{data.description}</p>
+                <p class="mb-6 leading-6 text-sm font-medium">
+                  {data.description}
+                </p>
                 <ul class="flex flex-wrap gap-4 mt-auto">
                   {data.tags.sort().map((tag) => (
                     <a
                       href={`/collection/tag/${tag}`}
-                      class="text-xs capitalize font-medium px-3 py-1 bg-accent-400/10 hover:bg-accent-400/20 transition-colors text-accent-800 dark:text-accent-200 border-accent-300/20 rounded border relative"
+                      class="text-xs capitalize font-medium px-3 py-1 bg-pink-400/10 hover:bg-pink-400/20 transition-colors text-pink-800 dark:text-pink-200 border-pink-300/20 rounded border relative"
                     >
                       {tag}
                     </a>

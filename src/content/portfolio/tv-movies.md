@@ -4,7 +4,7 @@ title: "Tv Shows & Movies"
 description: "A website to explore tv shows and movies from the movie database with modern features such as infinite scrolling."
 projectSettings:
   {
-    techStack: ["TypeScript", "React", "React Query", "Tailwind CSS"],
+    techStack: ["React", "TypeScript", "React Query", "Tailwind CSS"],
     github: "https://github.com/Narek-Pogosian/Tv-Movies",
   }
 ---
