@@ -1,6 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import tags from "@/config/tags.json";
 
+// REMEMBER TO ADD CUSTOM SLUG IN THE FRONTMATTER
 const collection = defineCollection({
   type: "content",
   schema: z.object({

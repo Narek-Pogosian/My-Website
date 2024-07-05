@@ -25,9 +25,17 @@
     }
   },
 
+  "about": {
+    "title": "About me"
+  },
+
   "portfolio": {
     "title": "Portfolio",
     "description": "Here is a curated collection of projects I've created and related experiences you can read about."
+  },
+
+  "contact": {
+    "title": "Contact"
   },
 
   "collection": {

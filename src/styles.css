@@ -58,9 +58,8 @@ section {
 }
 
 /* CUSTOM COMPONENTS */
-
 .banner {
-  @apply py-8 md:py-12;
+  @apply py-8 md:py-10;
 }
 
 /* GRADIENTS */
@@ -89,6 +88,34 @@ section {
       241deg,
       rgba(168, 152, 239, 0.2),
       rgba(239, 152, 207, 0) 57%
+    );
+}
+
+.contact-gradient {
+  background-color: #8eb0da27;
+  background-image: linear-gradient(
+      44deg,
+      rgba(171, 108, 239, 0.15),
+      rgba(255, 131, 122, 0) 54%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(151, 95, 201, 0.15),
+      rgba(152, 178, 239, 0) 48%
+    );
+}
+
+.about-gradient {
+  background-color: #8adeb827;
+  background-image: linear-gradient(
+      44deg,
+      rgba(99, 219, 171, 0.15),
+      rgba(255, 131, 122, 0) 54%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(95, 201, 143, 0.15),
+      rgba(152, 178, 239, 0) 48%
     );
 }
 
