@@ -12,5 +12,5 @@ export function capitalize(str: string) {
 export function sortByPriority<T extends { data: { priority: number } }>(
   arr: T[]
 ) {
-  return arr.slice().sort((a, b) => b.data.priority - a.data.priority);
+  return arr.sort((a, b) => b.data.priority - a.data.priority);
 }
