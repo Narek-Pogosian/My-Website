@@ -2,7 +2,9 @@
 import CollectionLayout from "@/layouts/CollectionLayout.astro";
 import { getCollection } from "astro:content";
 
-const entries = await getCollection("collection");
+const entries = await getCollection("collection", ({ data }) => {
+  return data.isDraft !== true;
+});
 ---
 
 <CollectionLayout posts={entries} />

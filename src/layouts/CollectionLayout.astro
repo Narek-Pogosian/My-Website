@@ -72,7 +72,7 @@ const { tag } = Astro.params;
                 <p class="mb-6 leading-6 text-sm font-medium">
                   {data.description}
                 </p>
-                <ul class="flex flex-wrap gap-4 mt-auto">
+                <ul class="flex flex-wrap gap-2 mt-auto">
                   {data.tags.sort().map((tag) => (
                     <a
                       href={`/collection/tag/${tag}`}

@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const entries = await getCollection("collection", ({ data }) => {
-  return data.tags.includes(tag);
+  return data.tags.includes(tag) && data.isDraft !== true;
 });
 ---
 

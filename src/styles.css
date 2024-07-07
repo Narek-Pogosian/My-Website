@@ -59,7 +59,7 @@ section {
 
 /* CUSTOM COMPONENTS */
 .banner {
-  @apply py-8 md:py-10;
+  @apply py-10;
 }
 
 /* GRADIENTS */

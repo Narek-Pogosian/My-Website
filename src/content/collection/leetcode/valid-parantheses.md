@@ -20,6 +20,8 @@ publishDate: 2024-07-05
 
 ## Solution
 
+The key to solving this problem is to understand that as soon as we encounter a closing bracket e.g ")", "]" or "}" we need to check that the latest encountered opening bracket matches the closing one. But we also need to remember the previous encountered opnening brackets so a good way to do it is to use a stack data structure. Everytime we encounter an opening bracket as we traverse the string we push it to the stack and as we get to a closing one we pop the top one from the stack and check if it matches.
+
 ```js
 function isValid(str) {
   const stack = [];
