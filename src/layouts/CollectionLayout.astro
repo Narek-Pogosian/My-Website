@@ -58,7 +58,7 @@ const { tag } = Astro.params;
       ) : (
         <ul class="grid lg:grid-cols-3 sm:grid-cols-2 gap-8">
           {sortByPriority(posts).map(({ data, slug }) => (
-            <li class="relative bg-element py-4 px-6 rounded shadow-md shadow-hover dark:shadow-black/40">
+            <li class="relative bg-element px-6 py-5 rounded shadow-md shadow-hover dark:shadow-black/40">
               <article class="flex flex-col">
                 <a
                   href={`/collection/${slug}`}
