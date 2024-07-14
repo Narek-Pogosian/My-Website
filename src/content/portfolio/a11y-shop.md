@@ -6,7 +6,6 @@ projectSettings:
   {
     techStack: ["Next.js", "TypeScript", "Drizzle ORM", "Tailwind CSS"],
     github: "https://github.com/Narek-Pogosian/Accessible-Shop",
-    website: "refw",
   }
 ---
 

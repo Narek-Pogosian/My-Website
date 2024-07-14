@@ -62,6 +62,10 @@ section {
   @apply py-10;
 }
 
+.card {
+  @apply relative bg-element px-6 py-5 rounded shadow-md shadow-hover dark:shadow-black/40;
+}
+
 /* GRADIENTS */
 .hero-gradient {
   background-color: #c19ac727;

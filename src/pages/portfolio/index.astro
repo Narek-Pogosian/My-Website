@@ -20,7 +20,7 @@ const entries = await getCollection("portfolio");
     <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         sortByPriority(entries).map((entry) => (
-          <li class="p-6 bg-element rounded shadow-md shadow-hover dark:shadow-black/40 relative">
+          <li class="card">
             <aricle class="flex flex-col h-full">
               <a
                 href={`/portfolio/${entry.slug}`}
