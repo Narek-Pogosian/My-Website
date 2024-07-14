@@ -18,10 +18,10 @@
 
   "hero": {
     "title": "Let's make your product a success.",
-    "description": "Crator is your partner in digital innovation. We fuse strategic thinking with standout design and development to deliver uniquely tailored solutions.",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi quas et suscipit! Nihil reiciendis commodi perspiciatis sequi enim deleniti nisi.",
     "button": {
-      "label": "Get Access Now",
-      "link": "/"
+      "label": "My Portfolio",
+      "link": "/portfolio"
     }
   },
 

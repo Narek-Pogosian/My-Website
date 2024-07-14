@@ -1,14 +1,18 @@
 ---
-import type { MarkdownHeading } from "astro";
 import RootLayout from "./RootLayout.astro";
+import type { MarkdownHeading } from "astro";
+import type { CollectionEntry } from "astro:content";
 import { cn } from "@/lib/utils";
+import { button } from "@/components/ui/Button.astro";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   title: string;
   headings: MarkdownHeading[];
+  projectSettings?: CollectionEntry<"portfolio">["data"]["projectSettings"];
 }
 
-const { headings, title } = Astro.props;
+const { headings, title, projectSettings } = Astro.props;
 ---
 
 <RootLayout title={title}>
@@ -45,12 +49,45 @@ const { headings, title } = Astro.props;
         </ul>
       </nav>
     </div>
-    <div
-      class="prose prose-pre:max-w-[92vw] dark:prose-invert max-lg:mx-auto max-w-2xl"
-    >
-      <h1>{title}</h1>
-      <!-- Render the <Content /> comp as child -->
-      <slot />
+    <div class="flex gap-4 flex-col max-xl:w-full xl:flex-row">
+      <div
+        class="prose prose-pre:max-w-[92vw] dark:prose-invert max-xl:mx-auto max-w-2xl"
+      >
+        <h1>{title}</h1>
+        <!-- Render the <Content /> comp as child -->
+        <slot />
+      </div>
+      {
+        projectSettings && (
+          <nav
+            aria-label="Project links"
+            class="flex max-xl:justify-center w-full xl:flex-col gap-2 min-w-56 max-xl:mt-8"
+          >
+            <a
+              href={projectSettings.github}
+              target="_blank"
+              class={cn(
+                button({ variant: "default", size: "sm" }),
+                "font-sans items-center gap-2 h-9"
+              )}
+            >
+              <Icon name="github" size={25} /> GitHub
+            </a>
+            {projectSettings.website && (
+              <a
+                href={projectSettings.website}
+                target="_blank"
+                class={cn(
+                  button({ variant: "ghost", size: "sm" }),
+                  "font-sans items-center gap-2 h-9 border border-neutral-200 dark:border-neutral-800"
+                )}
+              >
+                View Website
+              </a>
+            )}
+          </nav>
+        )
+      }
     </div>
   </div>
 </RootLayout>

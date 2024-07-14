@@ -6,46 +6,16 @@ projectSettings:
   {
     techStack: ["Next.js", "TypeScript", "Drizzle ORM", "Tailwind CSS"],
     github: "https://github.com/Narek-Pogosian/Accessible-Shop",
+    website: "refw",
   }
 ---
 
-## Heading
+## About the project
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit
-nemo modi nisi rem corporis, mollitia aliquam accusamus quod omnis
-molestiae dolorum fugiat necessitatibus soluta autem esse expedita hic
-repellendus nobis! Voluptate quidem perferendis asperiores vero rerum
-facere assumenda, quas cumque expedita fugiat distinctio rem autem nulla
-consectetur a excepturi!
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat, fugit natus, iure doloremque, officiis itaque at dolores perferendis facilis alias. Vel laboriosam totam accusamus facere consequuntur vero recusandae blanditiis numquam cum excepturi dolorem deserunt deleniti cupiditate laborum alias, id iste, distinctio pariatur aut ut ipsam illum? Enim, id dignissimos!
 
-## Heading 2
+![](/images/shop.png)
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit
-nemo modi nisi rem corporis, mollitia aliquam accusamus quod omnis
-molestiae dolorum fugiat necessitatibus soluta autem esse expedita hic
-repellendus nobis! Voluptate quidem perferendis asperiores vero rerum
-facere assumenda, quas cumque expedita fugiat distinctio rem autem nulla
-consectetur a excepturi!
+## What I've learned
 
-### Subheading 1
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit
-nemo modi nisi rem corporis, mollitia aliquam accusamus quod omnis
-molestiae dolorum fugiat necessitatibus soluta autem esse expedita hic
-repellendus nobis!
-
-### Subheading
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit
-nemo modi nisi rem corporis, mollitia aliquam accusamus quod omnis
-molestiae dolorum fugiat necessitatibus soluta autem esse expedita hic
-repellendus nobis!
-
-## Heading 3
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga suscipit
-nemo modi nisi rem corporis, mollitia aliquam accusamus quod omnis
-molestiae dolorum fugiat necessitatibus soluta autem esse expedita hic
-repellendus nobis! Voluptate quidem perferendis asperiores vero rerum
-facere assumenda, quas cumque expedita fugiat distinctio rem autem nulla
-consectetur a excepturi!
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat, fugit natus, iure doloremque, officiis itaque at dolores perferendis facilis alias. Vel laboriosam totam accusamus facere consequuntur vero recusandae blanditiis numquam cum excepturi dolorem deserunt deleniti cupiditate laborum alias, id iste, distinctio pariatur aut ut ipsam illum? Enim, id dignissimos!
