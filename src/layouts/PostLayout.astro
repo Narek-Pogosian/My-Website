@@ -25,7 +25,7 @@ const { headings, title, projectSettings } = Astro.props;
         class="border-l-4 pl-4 border-fuchsia-600/30"
       >
         <p class="font-extrabold" aria-hidden="true">On this page</p>
-        <ul>
+        <ul class="py-2 pr-2">
           {
             headings.map((heading) => (
               <li>
@@ -49,7 +49,7 @@ const { headings, title, projectSettings } = Astro.props;
         </ul>
       </nav>
     </div>
-    <div class="flex gap-4 flex-col max-xl:w-full xl:flex-row">
+    <div class="flex gap-8 flex-col max-xl:w-full xl:flex-row">
       <div
         class="prose prose-pre:max-w-[92vw] dark:prose-invert max-xl:mx-auto max-w-2xl"
       >

@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <header
-  class="sticky top-0 font-serif z-50 shadow-md shadow-hover dark:shadow-black/60 left-0 h-14 flex items-center bg-background"
+  class="sticky top-0 z-50 shadow-md font-serif shadow-hover dark:shadow-black/60 left-0 h-14 flex items-center bg-background"
 >
   <div class="container flex justify-between">
     <div class="flex gap-14 items-center">
@@ -22,7 +22,7 @@ import { Icon } from "astro-icon/components";
               <li>
                 <a
                   href={item.url}
-                  class="text-sm font-medium px-1 py-0.5 relative after:absolute after:h-0.5 after:w-[110%] after:scale-y-100 after:-bottom-1 after:bg-foreground after:-left-[5%] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  class="text-sm font-medium px-1 py-0.5 relative after:absolute after:h-0.5 after:w-[110%] after:-bottom-1 after:bg-foreground after:-left-[5%] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {item.name}
                 </a>

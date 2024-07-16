@@ -11,10 +11,6 @@
     {
       "name": "Contact",
       "url": "/contact"
-    },
-    {
-      "name": "Collection",
-      "url": "/collection"
     }
   ],
   "footer": [
@@ -33,10 +29,6 @@
     {
       "name": "Contact",
       "url": "/contact"
-    },
-    {
-      "name": "Collection",
-      "url": "/collection"
     }
   ]
 }
