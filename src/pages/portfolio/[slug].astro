@@ -1,6 +1,10 @@
 ---
-import PostLayout from "@/layouts/PostLayout.astro";
+import ToC from "@/components/ToC.astro";
+import RootLayout from "@/layouts/RootLayout.astro";
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { button } from "@/components/ui/Button.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("portfolio");
@@ -15,10 +19,51 @@ const { entry } = Astro.props;
 const { Content, headings } = await entry.render();
 ---
 
-<PostLayout
-  title={entry.data.title}
-  headings={headings}
-  projectSettings={entry.data.projectSettings}
->
-  <Content />
-</PostLayout>
+<RootLayout title={entry.data.title}>
+  <div class="container relative flex gap-10 py-10">
+    <div
+      class="w-72 font-serif sticky top-24 left-0 h-fit max-h-[82vh] scrollbar-thin overflow-y-auto hidden lg:block"
+    >
+      <ToC headings={headings} />
+    </div>
+    <div class="flex gap-8 flex-col max-xl:w-full xl:flex-row">
+      <div
+        class="prose prose-pre:max-w-[92vw] dark:prose-invert max-xl:mx-auto max-w-2xl"
+      >
+        <h1>{entry.data.title}</h1>
+        <Content />
+      </div>
+      {
+        entry.data.projectSettings && (
+          <nav
+            aria-label="Project links"
+            class="flex max-xl:justify-center w-full xl:flex-col gap-2 min-w-56 max-xl:mt-8"
+          >
+            <a
+              href={entry.data.projectSettings.github}
+              target="_blank"
+              class={cn(
+                button({ variant: "default", size: "sm" }),
+                "font-sans items-center gap-2 h-9"
+              )}
+            >
+              <Icon name="github" size={25} /> GitHub
+            </a>
+            {entry.data.projectSettings.website && (
+              <a
+                href={entry.data.projectSettings.website}
+                target="_blank"
+                class={cn(
+                  button({ variant: "ghost", size: "sm" }),
+                  "font-sans items-center gap-2 h-9 border border-neutral-200 dark:border-neutral-800"
+                )}
+              >
+                View Website
+              </a>
+            )}
+          </nav>
+        )
+      }
+    </div>
+  </div>
+</RootLayout>

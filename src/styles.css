@@ -110,30 +110,6 @@ section {
 }
 
 .about-gradient {
-  background-color: #8adeb827;
-  background-image: linear-gradient(
-      44deg,
-      rgba(99, 219, 171, 0.15),
-      rgba(255, 131, 122, 0) 54%
-    ),
-    linear-gradient(
-      241deg,
-      rgba(95, 201, 143, 0.15),
-      rgba(152, 178, 239, 0) 48%
-    );
-}
-
-.collection-gradient {
-  background-color: #c19ac727;
-  background-image: linear-gradient(
-      44deg,
-      rgba(239, 108, 189, 0.2),
-      rgba(255, 131, 122, 0) 54%
-    ),
-    linear-gradient(241deg, rgba(151, 95, 201, 0.2), rgba(239, 152, 207, 0) 48%);
-}
-
-.portfolio-gradient {
   background-color: #dfad8b2a;
   background-image: linear-gradient(
       44deg,
@@ -141,6 +117,16 @@ section {
       rgba(255, 131, 122, 0) 44%
     ),
     linear-gradient(241deg, rgba(226, 96, 85, 0.32), rgba(239, 152, 207, 0) 68%);
+}
+
+.portfolio-gradient {
+  background-color: #c19ac727;
+  background-image: linear-gradient(
+      44deg,
+      rgba(239, 108, 189, 0.2),
+      rgba(255, 131, 122, 0) 54%
+    ),
+    linear-gradient(241deg, rgba(151, 95, 201, 0.2), rgba(239, 152, 207, 0) 48%);
 }
 
 .not-found-gradient {

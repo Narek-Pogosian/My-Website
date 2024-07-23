@@ -34,7 +34,7 @@ const entries = await getCollection("portfolio");
               {entry.data.projectSettings && (
                 <ul class="mt-auto flex gap-2 flex-wrap">
                   {entry.data.projectSettings.techStack.map((item) => (
-                    <span class="text-xs capitalize font-medium px-3 cursor-default py-1 bg-orange-400/10 hover:bg-orange-400/20 transition-colors text-orange-800 dark:text-orange-200 border-orange-300/20 rounded border relative">
+                    <span class="text-xs capitalize pointer-events-none font-medium px-3 py-1 bg-pink-400/10 text-pink-800 dark:text-pink-200 border-pink-300/20 rounded border relative">
                       {item}
                     </span>
                   ))}

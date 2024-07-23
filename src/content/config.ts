@@ -1,21 +1,4 @@
 import { defineCollection, z } from "astro:content";
-import tags from "@/config/tags.json";
-
-// REMEMBER TO ADD CUSTOM SLUG IN THE FRONTMATTER
-const collection = defineCollection({
-  type: "content",
-  schema: z.object({
-    isDraft: z.boolean(),
-    title: z.string().max(50),
-    description: z.string().max(200),
-    priority: z.number().min(0).max(10),
-    tags: z
-      .array(z.string())
-      .refine((arr) => arr.every((entry) => tags.includes(entry))),
-    publishDate: z.date(),
-    updatedData: z.date().optional(),
-  }),
-});
 
 const portfolio = defineCollection({
   type: "content",
@@ -34,6 +17,5 @@ const portfolio = defineCollection({
 });
 
 export const collections = {
-  collection,
   portfolio,
 };

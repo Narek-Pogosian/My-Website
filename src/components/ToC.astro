@@ -1,0 +1,39 @@
+---
+import { cn } from "@/lib/utils";
+import type { MarkdownHeading } from "astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+---
+
+<nav
+  aria-label="Table of content"
+  class="border-l-4 pl-4 border-fuchsia-600/30"
+>
+  <p class="font-extrabold" aria-hidden="true">On this page</p>
+  <ul class="py-2 pr-2">
+    {
+      headings.map((heading) => (
+        <li>
+          <a
+            href={`#${heading.slug}`}
+            class={cn(
+              "text-sm leading-5 mt-4 text-pretty block hover:underline",
+              {
+                "ml-3 mt-2": heading.depth === 3,
+                "ml-6 mt-2": heading.depth === 4,
+                "ml-9 mt-2": heading.depth === 5,
+                "ml-12 mt-2": heading.depth === 6,
+              }
+            )}
+          >
+            {heading.text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
