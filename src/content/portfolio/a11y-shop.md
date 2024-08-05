@@ -11,6 +11,8 @@ projectSettings:
 
 ## About the project
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat, fugit natus, iure doloremque, officiis itaque at dolores perferendis facilis alias. Vel laboriosam totam accusamus facere consequuntur vero recusandae blanditiis numquam cum excepturi dolorem deserunt deleniti cupiditate laborum alias, id iste, distinctio pariatur aut ut ipsam illum? Enim, id dignissimos!
+This project served as the examination project for my Frontend Development program at KYH. The primary goal of this project was to learn more about Web Accessibility and to get familiar with tools such as screenreaders. I chose to do it by researching from various sources, mainly W3C and then built an e-commerce platform with common features such as product browsing with filtering and sort and a cart system.
+
+To summarize the result, I am happy I chose this project as I learned alot more about semantic HTML and the WAI-ARIA guidelines and got a better understanding of how screenreaders are used.
 
 <img src="/images/shop.webp" alt="" width="300" height="500" class="w-full"/>
