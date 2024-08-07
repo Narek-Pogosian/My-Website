@@ -23,10 +23,10 @@ import Button from "./ui/Button.astro";
     const storageTheme = localStorage.getItem("theme");
     document.documentElement.classList.toggle("dark");
 
-    if (storageTheme === "dark") {
-      localStorage.setItem("theme", "light");
-    } else {
+    if (storageTheme === "light") {
       localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
     }
   }
 
